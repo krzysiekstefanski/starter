@@ -11,6 +11,8 @@ const ProductsList = styled.div`
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
   grid-gap: 15px;
+  max-width: 1200px;
+  margin: 0 auto;
 
   @media (max-width: 768px) {
     grid-template-columns: 100%;
