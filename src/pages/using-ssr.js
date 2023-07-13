@@ -11,6 +11,10 @@ const ProductsList = styled.div`
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
   grid-gap: 15px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 100%;
+  }
 `
 
 const Wrapper = styled.div`
