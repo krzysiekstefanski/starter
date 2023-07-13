@@ -66,8 +66,8 @@ const UsingSSR = ({ serverData }) => {
         Produkty
       </h1>
       {serverData.map(product => (
-          <div>
-            <img src={product.image} loading="lazy" />
+          <div style={{height: "100vh"}}>
+            <img src={product.image} loading="lazy" width="320"/>
             <span>{product.title}</span>
             <span>${product.price}</span>
           </div>
