@@ -1,61 +1,61 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+// import { Link } from "gatsby"
+// import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 import styled from "styled-components"
 
-const ProductsList = styled.div`
-  display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  grid-gap: 15px;
-  max-width: 1200px;
-  margin: 0 auto;
+// const ProductsList = styled.div`
+//   display: grid;
+//   grid-template-columns: 25% 25% 25% 25%;
+//   grid-gap: 15px;
+//   max-width: 1200px;
+//   margin: 0 auto;
 
-  @media (max-width: 768px) {
-    grid-template-columns: 100%;
-  }
-`
+//   @media (max-width: 768px) {
+//     grid-template-columns: 100%;
+//   }
+// `
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  gap: 10px;
-  padding: 10px;
-  border: 1px solid #eee;
+// const Wrapper = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   width: 100%;
+//   gap: 10px;
+//   padding: 10px;
+//   border: 1px solid #eee;
 
-  &:hover {
-    border-color: #ddd;
-  }
-`
+//   &:hover {
+//     border-color: #ddd;
+//   }
+// `
 
-const ImageWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-  width: 100%;
+// const ImageWrapper = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   height: 200px;
+//   width: 100%;
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    margin: 0;
-  }
-`
+//   img {
+//     width: 100%;
+//     height: 100%;
+//     object-fit: contain;
+//     margin: 0;
+//   }
+// `
 
-const Price = styled.span`
-  font-size: 14px;
-  font-weight: 600;
-  color: #030;
-  margin-top: auto;
-  align-self: flex-end;
-`;
+// const Price = styled.span`
+//   font-size: 14px;
+//   font-weight: 600;
+//   color: #030;
+//   margin-top: auto;
+//   align-self: flex-end;
+// `;
 
 const UsingSSR = ({ serverData }) => {
   console.log(serverData);
@@ -65,7 +65,14 @@ const UsingSSR = ({ serverData }) => {
       <h1>
         Produkty
       </h1>
-      <ProductsList>
+      {serverData.map(product => (
+          <div>
+            <img src={product.image} loading="lazy" />
+            <span>{product.title}</span>
+            <span>${product.price}</span>
+          </div>
+        ))}
+      {/* <ProductsList>
         {serverData.map(product => (
           <Wrapper>
             <ImageWrapper>
@@ -75,7 +82,7 @@ const UsingSSR = ({ serverData }) => {
             <Price>${product.price}</Price>
           </Wrapper>
         ))}
-      </ProductsList>
+      </ProductsList> */}
     </Layout>
   )
 }
