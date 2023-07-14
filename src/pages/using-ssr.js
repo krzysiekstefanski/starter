@@ -6,7 +6,7 @@ import styled from "styled-components"
 const ProductsList = styled.div`
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 15px;
 
   @media (max-width: 768px) {
