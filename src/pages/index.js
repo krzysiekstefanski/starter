@@ -31,7 +31,7 @@ const IndexPage = ({ data }) => {
         </p>
         <Swiper
           slidesPerView='1'
-          style={{height: 450, maxWidth: 600}}
+          style={{height: 650, maxWidth: 1200}}
         >
           <SwiperSlide>
             <StaticImage
